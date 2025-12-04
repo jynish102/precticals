@@ -1,0 +1,176 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+}
+
+.settings-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.settings-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.back-arrow {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.settings-header h1 {
+    font-size: 20px;
+    margin: 0;
+    flex: 1;
+    text-align: center;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+}
+
+.settings-section {
+    margin-bottom: 25px;
+}
+
+.settings-section h2 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.settings-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.settings-section li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.settings-section li a {
+    text-decoration: none;
+    color: #000;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.status {
+    font-size: 14px;
+    color: gray;
+}
+
+.account-center-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.account-icon {
+    font-size: 26px;
+    color: #000;
+}
+
+.account-text h2 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.account-text p {
+    margin: 3px 0 0;
+    font-size: 14px;
+}
+
+.account-text a {
+    text-decoration: none;
+    color: gray;
+}
+
+.privacy-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.privacy-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.privacy-icon {
+    font-size: 26px;
+    color: #000;
+}
+
+.privacy-text h2 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.privacy-text p {
+    margin: 3px 0 0;
+    font-size: 14px;
+    color: gray;
+}
+
+/* ✅ Toggle Switch */
+.switch {
+    position: relative;
+    width: 46px;
+    height: 24px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    inset: 0;
+    background-color: #ccc;
+    border-radius: 24px;
+    transition: 0.4s;
+}
+
+.slider::before {
+    content: "";
+    position: absolute;
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.4s;
+}
+
+.switch input:checked+.slider {
+    background-color: #0095f6;
+}
+
+.switch input:checked+.slider::before {
+    transform: translateX(22px);
+}
