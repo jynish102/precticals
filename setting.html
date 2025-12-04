@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings and Privacy - PixelOra</title>
+  <link rel="stylesheet" href="css/setting.css">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+</head>
+<body>
+  <div class="settings-container">
+
+    <!-- Header -->
+    <div class="settings-header">
+      <span class="back-arrow">&#8592;</span>
+      <h1>Settings and Privacy</h1>
+      <img src="logo.png" alt="Logo" class="logo">
+    </div>
+
+    <!-- Account Section -->
+    <div class="account-center-row">
+  <i class='bx bx-user account-icon'></i>
+
+  <div class="account-text">
+    <h2>Account Center</h2>
+    <p><a href="#">Password and Security</a></p>
+  </div>
+</div>
+
+
+                <!-- Privacy Section -->
+                <div class="privacy-row">
+            <div class="privacy-left">
+                <i class='bx bx-lock-alt privacy-icon'></i>
+                <div class="privacy-text">
+                <h2>Account Privacy</h2>
+                <p id="privacyStatus">Public</p>
+                </div>
+            </div>
+
+            <!-- Toggle Switch -->
+            <label class="switch">
+                <input type="checkbox" id="privacyToggle">
+                <span class="slider"></span>
+            </label>
+            </div>
+
+
+    <!-- Login & Account Options -->
+    <div class="settings-section">
+      <ul>
+        <li><a href="#">Login</a></li>
+        <li><a href="#">Add Account</a></li>
+        <li><a href="#">Log Out</a></li>
+      </ul>
+    </div>
+
+  </div>
+</body>
+<script src="setting.js"></script>
+</html>
