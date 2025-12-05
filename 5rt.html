@@ -1,196 +1,36 @@
+<!-- ✅ BOTTOM MORE MENU -->
 
-<html lang="en">
-<head>
-    <title> Css Style</title>
-    <style>
-        body{
-            counter-reset:section;
-            background-color:
-        }
-
-        h2{
-            border:20px  solid red;
-            background-color:tomato;
-            padding:15px;
-            box-shadow:1px 1px 1px
-
-        }
-        h2:hover{
-            background-color:black;
-            color:white;
-        }
-        h2::before{
-            counter-increment:section;
-            content:""counter(section)"";
-            color:white;
-            border-radius:50%;
-            border-color:black;
-            padding-left:0.8px;
-        
-            background-color:Blue;
-        }
-        
-        .tr{
-            margin:10px;
-        }
-        marquee{
-            font-size:20px;
-            color:green;
-            border-style:dashed;
-            background-color:#27CCF5;
-        }
-    </style>
-</head>
+<link href="css/3.css" rel="stylesheet">
 <body>
-    <h2>Marvel</h2>
-    <h2>Mi</h2>
-    <h2>Marvel</h2>
-    <h2>Marvel</h2>
+<div class="bottom-content">
 
-    <div>
-        <table border=1 align=center width=50%>
-            
-            <tr>
-                <th>#</th>
-                <th>Name</th>
-                <th>Release Year</th>
-            </tr>
+    <li class="nav-link more-btn" id="moreBtn">
+        <i class="bx bx-menu icon"></i>
+        <span class="text nav-text">More</span>
+    </li>
 
-            <tr>
-                <td>1</td>
-                <td>Iron Man</td>
-                <td>2008</td>
-            </tr>  
-            
-            <tr>
-                <td>2</td>
-                <td>The Incrediablae Hullk</td>
-                <td>2008</td>
-            </tr>
-            
-            <tr>
-                <td>3</td>
-                <td>Iron Man2</td>
-                <td>2010</td>
-            </tr>
-            
-            <tr>
-                <td>4</td>
-                <td>Thor</td>
-                <td>2011</td>
+    <!-- ✅ INSTAGRAM STYLE POPUP -->
+    <div class="more-popup" id="morePopup">
+        <a href="#"><i class="bx bx-cog"></i> Settings</a>
+        <a href="#"><i class="bx bx-time"></i> Your activity</a>
+        <a href="#"><i class="bx bx-bookmark"></i> Saved</a>
+        <a href="#"><i class="bx bx-sun"></i> Switch appearance</a>
+        <a href="#"><i class="bx bx-flag"></i> Report a problem</a>
 
-        </table>
+        <div class="popup-divider"></div>
+
+        <a href="#"><i class="bx bx-at"></i> Threads</a>
+
+        <div class="popup-divider"></div>
+
+        <a href="#">Switch accounts</a>
+        <a href="#" style="color:red;">Log out</a>
     </div>
 
-    <!--Vertical table -->
-
-    <div class="tr">
-        <table border=1 align="center" cellpadding="10" cellspacing="10">
-            <tr>
-                <td>Name</td>
-                <td><input></td>
-            </tr>
-
-             <tr>
-                <td>Password</td>
-                <td><input></td>
-            </tr>
-
-             <tr>
-                <td><input type="submit" value="LOGIN"></td>
-                <td><input type="submit" value="CANCEL"></td>
-            </tr>
-
-        </table>
-    </div>
-
-    <div class="tr">
-        <table bgcolor="pink" border="1" align="center" cellpadding="1" cellspacing="5">
-            <tr>
-                <th colspan="3">DC</th>
-            </tr>
-
-            <tr>
-                <td rowspan="8">D</br>t</br>e</br>c</br>t</br>i</br>v</br>e</td>
-            </tr>
-
-            <tr>
-                <th>Title</th>
-                <th>Year</th>
-            </tr>
-
-            <tr>
-                <td>Superman</td>
-                <td>1978</td>
-
-            </tr>
-
-             <tr>
-                <td>Superman</td>
-                <td>1978</td>
-
-            </tr>
-
-             <tr>
-                <td>Superman</td>
-                <td>1978</td>
-
-            </tr>
-
-             <tr>
-                <td>Superman</td>
-                <td>1978</td>
-
-            </tr>
-
-             <tr>
-                <td>Superman</td>
-                <td>1978</td>
-
-            </tr>
-
-             <tr>
-                <td>Superman</td>
-                <td>1978</td>
-
-            </tr>
-
-             <tr>
-                <td colspan="3">DC</td>
-                
-
-            </tr>
-        </table>
-    </div>
-
-    <div class="tr">
-        <marquee behavior="scroll">
-            Marvel Cenematic Universe
-        </marquee>
-
-        <marquee behavior="slide">
-            Detective Comics
-        </marquee>
-
-        <marquee behavior="alternate">
-         Mission Impossible
-        </marquee>
-
-         <marquee direction=left>
-         Mission Impossible-1
-        </marquee>
-
-        <marquee direction=left>
-        Tom Cruce
-       </marquee>
-
-        <marquee direction=right>
-         Pirest Of Cariban
-        </marquee>
 
 
-
-    </div>
-    
+</div>
 </body>
-</html> 
+
+
+<script src="script.js"></script>

@@ -90,6 +90,30 @@ document.querySelectorAll(".likeBtn").forEach(btn => {
     });
 });
 
+/*----------------------more setting------------------- */
+const moreToggle = document.getElementById("moreToggle");
+const moreDropdown = document.getElementById("moreDropdown");
+
+moreToggle.addEventListener("click", (e) => {
+  e.stopPropagation();
+  moreDropdown.classList.toggle("show");
+});
+
+document.addEventListener("click", () => {
+  moreDropdown.classList.remove("show");
+});
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    moreDropdown.classList.remove("show");
+  }
+});
+
+
+
+
+
+
 
 
 

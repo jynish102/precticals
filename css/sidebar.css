@@ -688,3 +688,147 @@ body:not(.dark) .profile-box a:hover {
     color: red;
     transform: scale(1.2);
 }
+
+/* ✅ Bottom Content */
+.bottom-content {
+    padding: 12px;
+    position: relative;
+}
+
+.bottom-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* ✅ Dropdown Button */
+.dropdown-toggle {
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: 15px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    cursor: pointer;
+    width: 100%;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.dropdown-toggle:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* ✅ Dropdown Menu */
+.dropdown-menu {
+    display: none;
+    flex-direction: column;
+    background: #121212;
+    border-radius: 12px;
+    margin-top: 8px;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* ✅ Active State */
+.dropdown-menu.show {
+    display: flex;
+}
+
+.dropdown-menu a {
+    padding: 12px 16px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.dropdown-menu a:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.dropdown-menu .divider {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 4px 0;
+}
+
+.dropdown-menu .danger {
+    color: #ff4d4d;
+}
+
+/* ✅ Hover Dropdown Container */
+.hover-dropdown {
+    position: relative;
+}
+
+/* ✅ Button */
+.dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.dropdown-toggle:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* ✅ Dropdown Menu (Hidden by Default) */
+.hover-menu {
+    position: absolute;
+    bottom: 110%;
+    /* ✅ Shows ABOVE the More button */
+    left: 0;
+    background: #121212;
+    border-radius: 14px;
+    min-width: 220px;
+    overflow: hidden;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: 0.25s ease;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ✅ SHOW ON HOVER */
+.hover-dropdown:hover .hover-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* ✅ Dropdown Links */
+.hover-menu a {
+    padding: 12px 16px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.hover-menu a:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* ✅ Divider */
+.hover-menu .divider {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 4px 0;
+}
+
+/* ✅ Danger */
+.hover-menu .danger {
+    color: #ff4d4d;
+}
