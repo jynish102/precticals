@@ -2,53 +2,69 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PixelOra Profile</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link rel="stylesheet" href="css/profile.css">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 </head>
+
 <body>
+
   <div class="profile-container">
-    
-    <!-- User Info -->
-    <div class="user-info">
-      <img src="profile-pic.jpg" alt="Profile Picture" class="profile-pic">
-      <div class="user-details">
-        <h1 class="username">username_here</h1>
+
+    <!-- ✅ TOP BAR -->
+    <div class="profile-top">
+      <h1 class="username">username_here</h1>
+       <i class="bx bx-menu profile-menu" id="menuToggle"></i>
+    </div>
+
+    <!-- ✅ USER INFO ROW -->
+    <div class="user-row">
+
+      <img src="profile-pic.jpg" class="profile-pic">
+
+      <div class="user-right">
+        <h2 class="full-name">Full Name</h2>
+
         <div class="counts">
-          <div class="count">
-            <span class="number">12</span>
-            <span class="text">Posts</span>
+          <div>
+            <b>12</b>
+            <span>Posts</span>
           </div>
-          <div class="count">
-            <span class="number">150</span>
-            <span class="text">Followers</span>
+          <div>
+            <b>150</b>
+            <span>Followers</span>
           </div>
-          <div class="count">
-            <span class="number">200</span>
-            <span class="text">Following</span>
+          <div>
+            <b>200</b>
+            <span>Following</span>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Edit Profile Button -->
+    <!-- ✅ EDIT BUTTON ROW -->
     <div class="edit-btn-container">
+      <a href="edit_profile.html">
       <button class="edit-btn">Edit Profile</button>
+      </a>
     </div>
 
-    <!-- Tabs for Posts/Reels -->
+    <!-- ✅ TABS ROW -->
     <div class="tabs">
       <div class="tab active">
-        <img src="post-icon.png" alt="Posts">
+        <i class="bx bx-grid-alt"></i>
         <span>Posts</span>
       </div>
+
       <div class="tab">
-        <img src="reel-icon.png" alt="Reels">
+        <i class="bx bx-play-circle"></i>
         <span>Reels</span>
       </div>
     </div>
 
-    <!-- Content Grid -->
+    <!-- ✅ CONTENT GRID -->
     <div class="content-grid">
       <img src="post1.jpg" class="grid-item">
       <img src="post2.jpg" class="grid-item">
@@ -59,5 +75,14 @@
     </div>
 
   </div>
+
 </body>
+
+<script>
+document.getElementById("menuToggle").addEventListener("click", () => {
+  window.location.href = "setting.html";
+});
+</script>
+
+
 </html>

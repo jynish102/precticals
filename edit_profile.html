@@ -2,21 +2,48 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Edit Profile - PixelOra</title>
-  <link rel="stylesheet" href="css/edit_profile.css">
-</head>
-<body>
-  <div class="edit-profile-container">
-    
-    <!-- Profile Picture -->
-    <div class="edit-profile-pic">
-      <img src="profile-pic.jpg" alt="Profile Picture" class="profile-pic-large">
-      <button class="change-pic-btn">Change Profile Photo</button>
-    </div>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Edit Form -->
+  <link rel="stylesheet" href="css/edit_profile.css">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ✅ TOP BAR -->
+  <div class="top-bar">
+    <a href="profile.html" class="back-btn">
+      <i class="bx bx-arrow-back"></i>
+    </a>
+
+    <h2 class="page-title">Edit Profile</h2>
+  </div>
+
+
+  <div class="edit-profile-container">
+
+    <div class="edit-profile-pic">
+  
+  <!-- ✅ Hidden File Input -->
+  <input type="file" id="profileInput" hidden>
+
+  <!-- ✅ Clickable Image -->
+  <label for="profileInput">
+    <img src="profile-pic.jpg" class="profile-pic-large">
+  </label>
+
+  <!-- ✅ Optional Text Button (Also Clickable) -->
+  <label for="profileInput" class="change-pic-btn">
+    Change Profile Photo
+  </label>
+
+</div>
+
+
+    <!-- ✅ FORM -->
     <form class="edit-profile-form">
+
       <label>Username</label>
       <input type="text" value="username_here" required>
 
@@ -30,8 +57,10 @@
       <input type="email" value="email@example.com">
 
       <button type="submit" class="save-btn">Save</button>
+
     </form>
 
   </div>
+
 </body>
 </html>

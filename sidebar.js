@@ -21,31 +21,14 @@ modeSwitch.addEventListener("click", (e) => {
 });
 
 
-function openStoryUpload() {
-    document.getElementById("storyInput").click();
-}
-
-document.getElementById("storyInput").addEventListener("change", function (event) {
-    const file = event.target.files[0];
-
-    if (file) {
-        const reader = new FileReader();
-
-        reader.onload = function (e) {
-            document.getElementById("storyPreview").innerHTML =
-                `<img src="${e.target.result}" class="logo-avatar">`;
-        };
-
-        reader.readAsDataURL(file);
-    }
-});
 
 
 
-document.querySelectorAll(".reelBox").forEach(reelBox => {
+/*------------------video,paues---------------------------------------*/
+document.querySelectorAll(".reel-container").forEach(reelBox => {
 
     const type = reelBox.dataset.type;
-    const video = reelBox.querySelector(".reelVideo");
+    const video = reelBox.querySelector(".post-media");
     const soundBtn = reelBox.querySelector(".soundBtn");
     const tapIndicator = reelBox.querySelector(".tap-indicator");
 
@@ -75,11 +58,40 @@ document.querySelectorAll(".reelBox").forEach(reelBox => {
             setTimeout(() => {
                 tapIndicator.classList.remove("show");
             }, 800);
+        }else{
+            video.play();
+            tapIndicator.classList.remove("show");
         }
         lastTap = now;
     });
 
 });
+
+/*-------------------------- like button------------------------- */
+document.querySelectorAll(".likeBtn").forEach(btn => {
+    btn.addEventListener("click", () => {
+
+        const icon = btn.querySelector("i");
+        const countSpan = btn.querySelector("span");
+
+        let count = parseInt(countSpan.innerText.replace("k", "")) || 0;
+
+        if (btn.classList.contains("liked")) {
+            // ✅ UNLIKE
+            btn.classList.remove("liked");
+            icon.classList.replace("bxs-heart", "bx-heart");
+            countSpan.innerText = (count - 1) + "k";
+        } else {
+            // ✅ LIKE
+            btn.classList.add("liked");
+            icon.classList.replace("bx-heart", "bxs-heart");
+            countSpan.innerText = (count + 1) + "k";
+        }
+    });
+});
+
+
+
 
 
 
