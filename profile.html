@@ -13,20 +13,30 @@
 
   <div class="profile-container">
 
-    <!-- ✅ TOP BAR -->
-    <div class="profile-top">
-      <h1 class="username">username_here</h1>
-       <i class="bx bx-menu profile-menu" id="menuToggle"></i>
-    </div>
-
-    <!-- ✅ USER INFO ROW -->
+    <!-- ✅ USER INFO ROW (Updated Layout) -->
     <div class="user-row">
 
-      <img src="profile-pic.jpg" class="profile-pic">
+      <!-- ✅ PROFILE IMAGE WITH CAMERA & DEFAULT ICON -->
+      <div class="profile-pic-wrapper">
+        <i class="bx bxs-user default-user-icon"></i>
+        <label class="camera-icon">
+        <i class="bx bx-camera camera-icon"></i>
+        <input type="file" hidden>
+        </label>
+      </div>
 
+      <!-- ✅ USERNAME + NAME + SETTINGS ICON -->
       <div class="user-right">
-        <h2 class="full-name">Full Name</h2>
 
+        <div class="user-top-row">
+          <div class="user-text">
+            <h2 class="username">username_here</h2>
+            <span class="full-name">Full Name</span>
+          </div>
+
+        </div>
+
+        <!-- ✅ COUNTS ROW (UNCHANGED) -->
         <div class="counts">
           <div>
             <b>12</b>
@@ -41,17 +51,18 @@
             <span>Following</span>
           </div>
         </div>
+
       </div>
     </div>
 
-    <!-- ✅ EDIT BUTTON ROW -->
+    <!-- ✅ EDIT BUTTON ROW (UNCHANGED) -->
     <div class="edit-btn-container">
       <a href="edit_profile.html">
-      <button class="edit-btn">Edit Profile</button>
+        <button class="edit-btn">Edit Profile</button>
       </a>
     </div>
 
-    <!-- ✅ TABS ROW -->
+    <!-- ✅ TABS ROW (UNCHANGED) -->
     <div class="tabs">
       <div class="tab active">
         <i class="bx bx-grid-alt"></i>
@@ -64,7 +75,7 @@
       </div>
     </div>
 
-    <!-- ✅ CONTENT GRID -->
+    <!-- ✅ CONTENT GRID (UNCHANGED) -->
     <div class="content-grid">
       <img src="post1.jpg" class="grid-item">
       <img src="post2.jpg" class="grid-item">
@@ -78,11 +89,6 @@
 
 </body>
 
-<script>
-document.getElementById("menuToggle").addEventListener("click", () => {
-  window.location.href = "setting.html";
-});
-</script>
 
 
 </html>

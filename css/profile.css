@@ -6,18 +6,18 @@
 }
 
 body {
-    background: #1aa08e;
-    color: white;
+    background: #11c7c7;
+    color: rgb(20, 19, 19);
 }
 
-/* ✅ MAIN CONTAINER */
+
 .profile-container {
     max-width: 420px;
     margin: auto;
     padding: 15px;
 }
 
-/* ✅ TOP BAR */
+
 .profile-top {
     display: flex;
     justify-content: space-between;
@@ -35,7 +35,7 @@ body {
     cursor: pointer;
 }
 
-/* ✅ USER ROW */
+
 .user-row {
     display: flex;
     align-items: center;
@@ -43,13 +43,7 @@ body {
     margin-bottom: 12px;
 }
 
-.profile-pic {
-    width: 85px;
-    height: 85px;
-    border-radius: 18%;
-    object-fit: cover;
-    border: 2px solid #fff;
-}
+
 
 .user-right {
     flex: 1;
@@ -70,7 +64,7 @@ body {
     font-size: 13px;
 }
 
-/* ✅ EDIT BUTTON */
+
 .edit-btn-container {
     margin: 14px 0;
 }
@@ -86,7 +80,7 @@ body {
     cursor: pointer;
 }
 
-/* ✅ TABS */
+
 .tabs {
     display: flex;
     justify-content: space-around;
@@ -109,7 +103,7 @@ body {
     border-bottom: 2px solid white;
 }
 
-/* ✅ GRID */
+
 .content-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -123,3 +117,57 @@ body {
     object-fit: cover;
     border-radius: 6px;
 }
+
+.profile-pic-wrapper {
+    width: 42px;
+    height: 42px;
+    position: relative;
+    background: #2fd2c9;
+    display: flex;
+    align-items: center;
+     justify-content: center;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 30%;
+    border-bottom-left-radius: 30%;
+    border-bottom-right-radius: 6px;
+    overflow:hidden;
+}
+
+
+
+.default-user-icon {
+    font-size: 48px;
+    color: white;
+}
+
+.camera-icon {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+   
+    background: black;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.camera-icon i {
+    color: white;
+    font-size: 16px;
+}
+
+.user-top-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    justify-content: space-between;
+}
+
+.user-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
