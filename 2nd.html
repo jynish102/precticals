@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="css/sidebar.css">
 <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 
-<body >
+<body>
 
 <nav class="sidebar close">
     <header>
@@ -74,18 +74,22 @@
   </div>
 
   <div class="dropdown-menu hover-menu">
-    <a href="settings.html"><i class="bx bx-cog"></i> Settings</a>
-    <a href="#"><i class="bx bx-time"></i> Your activity</a>
+    <a href="setting.html"><i class="bx bx-cog"></i> Settings</a>
+    
     <a href="saved.html"><i class="bx bx-bookmark"></i> Saved</a>
-    <a href="#"><i class="bx bx-sun"></i> Switch appearance</a>
-    <a href="#"><i class="bx bx-flag"></i> Report a problem</a>
+    <a href="javascript:void(0)" class="switch-appearance">
+        <i class="bx bx-moon appearance-icon"></i>
+        <span class="appearance-text">Dark Mode</span>
+    </a>
+
+    
 
     <div class="divider"></div>
 
-    <a href="#"><i class="bx bx-at"></i> Threads</a>
-    <div class="divider"></div>
+    
+    
 
-    <a href="#">Switch accounts</a>
+    <a href="edit_profile.html">Switch accounts</a>
     <a href="logout.html" class="danger">Log out</a>
   </div>
 
@@ -112,38 +116,71 @@
             </div>
         </div>
 
-        <!-- Suggested Users as Logo Only -->
-        <div class="suggested-section">
-                <h2>Creators</h2>
+        <div class="suggested-panel">
 
-                <div class="suggest-list logos-only">
+  <!-- ✅ LOGGED IN USER -->
+  <div class="suggested-user">
+    <img src="logo.png" class="suggest-avatar big">
 
-                    <!-- ✅ MAIN USER LOGO WITH PLUS -->
-                    <div class="logo-wrapper user-logo">
-                        <div class="default-avatar" id="storyPreview">
-                    <i class="bx bxs-user"></i>
-
-                </div>
-
-                <div class="add-icon" onClick ="openStoryUpload()">+</div>
-                <input type="file" id="storyInput" accept="image/*" hidden>
-            </div>
-
-            <!-- Other Logos -->
-            <div class="logo-wrapper">
-                <img src="https://i.pravatar.cc/100?img=11" class="logo-avatar">
-            </div>
-
-            <div class="logo-wrapper">
-                <img src="https://i.pravatar.cc/100?img=22" class="logo-avatar">
-            </div>
-
-            <div class="logo-wrapper">
-                <img src="https://i.pravatar.cc/100?img=33" class="logo-avatar">
-            </div>
-
-        </div>
+    <div class="user-text">
+      <span class="username">jynik218</span>
+      <span class="fullname">jy</span>
     </div>
+
+    <a href="#" class="switch-btn">Switch</a>
+  </div>
+
+  <!-- ✅ HEADER -->
+  <div class="suggest-header">
+    <span>Suggested for you</span>
+    <a href="#">See All</a>
+  </div>
+
+  <div class="story-suggest-wrapper">
+
+  <!-- ✅ LEFT SIDE: HORIZONTAL SUGGESTED CREATORS -->
+  <div class="story-logos-row">
+
+    <div class="logo-wrapper">
+      <img src="https://i.pravatar.cc/100?img=11" class="logo-avatar">
+    </div>
+
+    <div class="logo-wrapper">
+      <img src="https://i.pravatar.cc/100?img=22" class="logo-avatar">
+    </div>
+
+    <div class="logo-wrapper">
+      <img src="https://i.pravatar.cc/100?img=33" class="logo-avatar">
+    </div>
+
+    <div class="logo-wrapper">
+      <img src="https://i.pravatar.cc/100?img=44" class="logo-avatar">
+    </div>
+
+  </div>
+
+  <!-- ✅ RIGHT SIDE: MAIN USER -->
+  <div class="main-user-box">
+
+    <div class="logo-wrapper user-logo">
+      <div class="default-avatar" id="storyPreview">
+        <i class="bx bxs-user"></i>
+      </div>
+
+      <div class="add-icon" onclick="openStoryUpload()">+</div>
+      <input type="file" id="storyInput" accept="image/*" hidden>
+    </div>
+
+    <div class="main-user-text">
+      <span class="main-username">jynik218</span>
+      <span class="main-fullname">jy</span>
+    </div>
+
+  </div>
+
+</div>
+
+
         <!-- Featured Posts -->
             <div class="feed">
 

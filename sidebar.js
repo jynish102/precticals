@@ -8,17 +8,34 @@ toggle.addEventListener("click", () => {
     sidebar.classList.toggle("close");
 });
 
-/* DARK MODE */
-modeSwitch.addEventListener("click", (e) => {
-    e.stopPropagation();
-    body.classList.toggle("dark");
 
-    if (body.classList.contains("dark")) {
-        modeText.innerText = "Light Mode";
+document.querySelectorAll(".switch-appearance").forEach(toggle => {
+  const icon = toggle.querySelector(".appearance-icon");
+  const text = toggle.querySelector(".appearance-text");
+
+  // ✅ Load saved theme
+  if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark");
+    icon.classList.replace("bx-moon", "bx-sun");
+    text.innerText = "Light Mode";
+  }
+
+  toggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+
+    if (document.body.classList.contains("dark")) {
+      icon.classList.replace("bx-moon", "bx-sun");
+      text.innerText = "Light Mode";
+      localStorage.setItem("theme", "dark");
     } else {
-        modeText.innerText = "Dark Mode";
+      icon.classList.replace("bx-sun", "bx-moon");
+      text.innerText = "Dark Mode";
+      localStorage.setItem("theme", "light");
     }
+  });
 });
+
+
 
 
 
