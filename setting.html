@@ -2,67 +2,171 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Settings and Privacy - PixelOra</title>
+  <title>Instagram Settings UI</title>
   <link rel="stylesheet" href="css/setting.css">
-  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-  <div class="settings-container">
 
-    <!-- Header -->
-    <div class="settings-header">
-          <!-- Top row -->
-      <div class="top-row">
-        <span class="back-arrow">&#8592;</span>
-          <h1>Settings and Privacy</h1>
-      </div>
-          <!-- Bottom row -->
-      <div class="bottom-row">
-        <span class="your-account">Your account</span>
-        <img src="logo.png" alt="Logo" class="logo">
-      </div>
-    </div>
+<div class="app">
 
+  <!-- ✅ LEFT SIDEBAR (NO EXTRA SPACE) -->
+  <div class="sidebar">
+    <div class="logo"><i class='bx bxl-instagram'></i></div>
 
-    <!-- Account Section -->
-              <div class="account-center-row">
-                <i class='bx bx-user account-icon'></i>
-
-                <div class="account-text">
-                  <h2>Account Center</h2>
-                  <p><a href="#">Password and Security</a></p>
-                </div>
-                 <i class='bx bx-chevron-right right-icon'></i>
-                </div>
-
-
-                <div class="privacy-row">
-  <div class="privacy-left">
-    <i class='bx bx-lock-alt privacy-icon'></i>
-
-    <div class="privacy-text">
-      <h2>Account Privacy</h2>
-      <p id="privacyStatus">Public</p>
+    <div class="menu">
+      <i class='bx bx-home'></i>
+      <i class='bx bx-search'></i>
+      <i class='bx bx-plus-circle'></i>
+      <i class='bx bx-heart'></i>
+      <i class='bx bx-user'></i>
     </div>
   </div>
 
-  <i class='bx bx-chevron-right right-icon'></i>
+  <!-- ✅ SETTINGS LIST -->
+<div class="settings-panel">
+
+  <!-- TOP TITLE -->
+  <h3 class="settings-title">Settings</h3>
+
+  <!-- ✅ ACCOUNTS CENTER CARD -->
+  <div class="accounts-card">
+    <div class="meta-row">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVzKi8C9IBFXXQXY1228D08Slsz7BBiyXZ0Q&s" class="meta-logo" alt="logo">
+      <strong>LensOra</strong>
+    </div>
+
+    <h4>Accounts Center</h4>
+    <p class="muted">
+      Manage your connected experiences and account settings across Meta technologies.
+    </p>
+
+    <ul class="accounts-links">
+      <li>
+        <i class='bx bx-user'></i>
+        Personal details</li>
+      
+    </ul>
+
+   
+  </div>
+
+  <!-- ✅ SECTION 1 -->
+  <p class="section-title">How you use Instagram</p>
+  <ul class="settings-list">
+    <li class="active">
+       <i class='bx bx-edit'></i>
+      Edit profile</li>
+    
+  </ul>
+
+  <!-- ✅ SECTION 2 -->
+  <p class="section-title">Who can see your content</p>
+  <ul class="settings-list">
+    <li>
+      <i class='bx bx-lock'></i>
+      Account privacy</li>
+  </ul>
+
+  
+
 </div>
 
 
+  <!-- ✅ EDIT PROFILE SECTION (AS IT IS) -->
+  <div class="edit-profile">
 
-    <!-- Login & Account Options -->
-    <div class="settings-section">
-      <ul>
-        <li>Login</li>
-        <li><a href="#">Add Account</a></li>
-        <li><a href="#">Log Out</a></li>
-      </ul>
+    <h2>Edit profile</h2>
+
+    <div class="profile-box">
+      <div class="profile-left">
+        <img src="https://i.pravatar.cc/100">
+        <div>
+          <strong>jynik218</strong>
+          <p>jy</p>
+        </div>
+      </div>
+
+      <button id ="openPhotoModal">Change photo</button>
+    </div>
+
+    
+
+    <div class="form-group">
+      <label>Bio</label>
+      <textarea placeholder="Bio"></textarea>
+      <small>0 / 150</small>
+    </div>
+
+    <div class="form-group">
+      <label>Gender</label>
+      <select>
+        <option>Prefer not to say</option>
+        <option>Male</option>
+        <option>Female</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <button type="submit" class="submit-btn">Submit</button>
+    </div>
+
+    <!--popup---------------------------------------------->
+    <!-- ✅ PROFILE PHOTO POPUP -->
+<div class="photo-modal" id="photoModal">
+  <div class="photo-modal-box">
+
+    <h3>Change Profile Photo</h3>
+
+    <div class="photo-options upload">
+      Upload Photo
+      <input type="file" hidden>
+    </div>
+
+    <div class="photo-options remove">
+      Remove Current Photo
+    </div>
+
+    <div class="photo-options cancel" id="closePhotoModal">
+      Cancel
     </div>
 
   </div>
+</div>
+
+
+  </div>
+
+</div>
+
 </body>
-<script src="setting.js"></script>
+
+<script>
+  const openBtn = document.getElementById("openPhotoModal");
+  const modal = document.getElementById("photoModal");
+  const closeBtn = document.getElementById("closePhotoModal");
+
+  openBtn.addEventListener("click", () => {
+    modal.style.display = "flex";
+  });
+
+  closeBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+
+  // Close when clicking outside popup
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+
+  
+  fileInput.addEventListener("change", function () {
+    const img = document.querySelector(".profile-left img");
+    img.src = URL.createObjectURL(this.files[0]);
+  });
+
+</script>
+
 </html>
