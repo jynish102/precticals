@@ -305,3 +305,26 @@ display: flex;
 .photo-options.cancel {
     font-weight: 500;
 }
+
+.account-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+}
+
+.close-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.settings-list li a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}

@@ -51,7 +51,7 @@ body {
     cursor: pointer;
 }
 
-.ac-link{
+.ac-link {
     background: #2f3f4d;
     color: white;
 }
@@ -108,40 +108,47 @@ body {
 }
 
 /* ✅ PROFILE CARD */
-.profile-card {
+.pd-card {
     border: 1px solid #ddd;
     border-radius: 14px;
     padding: 16px;
+    max-width: 650px;
+    overflow: hidden;
+}
+
+.pd-item {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    align-items: center;
-    max-width: 520px;
+    padding: 16px 20px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    transition: 0.2s;
 }
 
-.profile-left {
-    display: flex;
-    align-items: center;
-    gap: 14px;
+.pd-item:last-child {
+    border-bottom: none;
 }
 
-.profile-img {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background: #ddd;
+.pd-item:hover {
+    background: #f6f7f9;
 }
 
-.profile-left p {
+.pd-item strong {
+    font-size: 15px;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.pd-item p {
     font-size: 13px;
-    color: gray;
+    color: #666;
+    max-width: 460px;
 }
 
-.add-accounts {
-    display: inline-block;
-    margin-top: 14px;
-    color: #2563eb;
-    font-size: 14px;
-    text-decoration: none;
+.pd-item i {
+    font-size: 20px;
+    color: #333;
 }
 
 .meta-logo {
@@ -188,3 +195,4 @@ body {
 .ac-link-item.active i {
     color: white;
 }
+

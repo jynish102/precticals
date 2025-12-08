@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Profile Detail</title>
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/profile_d.css">
+  <link rel="stylesheet" href="css/personal_detail.css">
 </head>
 <body>
 
@@ -20,8 +20,8 @@
     </div>
 
     <div class="ac-main-links">
-      <a href="profile_detail.html" class="ac-link-item"  data-page="profile">
-        <div class="ac-link-active">
+      <a href="profile_detail.html" class="ac-link-item" data-page="profile">
+        <div class="ac-link">
           <i class='bx bx-user'></i>
           Profiles
         </div>
@@ -35,50 +35,58 @@
        <div class="ac-item"><i class='bx bx-lock'></i> Password and security</div>
       </a>
 
-      <a href="personal_detail.html" class="ac-link-item"  data-page="personal">
+      <a href="personal_detail.html"  data-page="personal">
        <div class="ac-item"><i class='bx bx-id-card'></i> Personal details</div>
       </a>
     </div>
   </div>
 
-  <!-- ✅ RIGHT CONTENT -->
   <div class="ac-content">
 
-    <div class="ac-top-bar">
-      <h2>Profiles</h2>
-      <a href="setting.html" class="close-link">
-       <i class='bx bx-x ac-close'></i>
-      </a> 
-    </div>
+  <!-- ✅ TOP BAR -->
+  <div class="ac-top-bar">
+    <h2>Personal details</h2>
+    <a href="setting.html">
+      <i class='bx bx-x ac-close'></i>
+    </a>
+  </div>
 
-    <p class="ac-desc">
-      Control your profile 
-      <span class="brand-color">identity and</span> sync your details across the entire Pixelaura ecosystem.
-      <span class="brand-color">Add new </span> profiles easily by connecting more <span class="brand-color">Pixelaura accounts.</span>
-    </p>
+  <!-- ✅ DESCRIPTION -->
+  <p class="ac-desc">
+    Pixelaura uses this information to verify your identity and keep the community safe.
+    You decide what personal details you make visible to others.
+  </p>
 
-    <!-- ✅ PROFILE CARD -->
-    <div class="profile-card">
-      <div class="profile-left">
-        <div class="profile-img"></div>
-        <div>
-          <strong>jynik218</strong>
-          <p>Pixelaura</p>
-        </div>
+  <!-- ✅ DETAILS CARD -->
+  <div class="pd-card">
+
+    <div class="pd-item">
+      <div>
+        <strong>Contact info</strong>
+        <p>jynik218@gmail.com</p>
       </div>
-
-      <i class='bx bx-chevron-right'></i>
+      
     </div>
 
-    <a href="#" class="add-accounts">Add accounts</a>
+    <div class="pd-item">
+      <div>
+        <strong>Birthday</strong>
+        <p>December 5, 2002</p>
+      </div>
+      
+    </div>
 
   </div>
+
+</div>
+
 
 </div>
 
 </body>
 
 <script>
+  
   const currentPage = window.location.pathname.split("/").pop();
 
   document.querySelectorAll(".ac-main-links a, .ac-settings a").forEach(link => {
@@ -91,7 +99,8 @@
       }
     }
   });
-</script>
 
+
+</script>
 
 </html>
