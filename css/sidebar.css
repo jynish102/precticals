@@ -335,7 +335,7 @@ body:not(.dark) .dropdown-toggle{
 
 .feed {
     max-width: 520px;
-    margin-top: 10px;
+    margin-top: 20px;
     padding-bottom: 80px;
 }
 
@@ -701,7 +701,7 @@ body:not(.dark) .hover-menu .danger {
 .story-logos-row {
     display: flex;
     gap: 14px;
-    overflow-x: auto;
+
 }
 
 .logo-wrapper {
@@ -763,5 +763,16 @@ body:not(.dark) .hover-menu .danger {
     color: #1877f2;
     font-weight: 500;
     text-decoration: none;
+}
+
+.logo-name {
+    margin-top: 6px;
+    font-size: 12px;
+    color: #444;
+    text-align: center;
+    width: 80px;
+    white-space: nowrap;
+    overflow: hidden;
+   
 }
 

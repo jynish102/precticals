@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Profile Detail</title>
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/profile_d.css">
+  <link rel="stylesheet" href="css/personal_detail_s.css">
 </head>
 <body>
 
@@ -21,7 +21,7 @@
 
     <div class="ac-main-links">
       <a href="profile_detail.html" class="ac-link-item"  data-page="profile">
-        <div class="ac-link-active">
+        <div class="ac-link">
           <i class='bx bx-user'></i>
           Profiles
         </div>
@@ -81,14 +81,12 @@
 <script>
   const currentPage = window.location.pathname.split("/").pop();
 
-  document.querySelectorAll(".ac-main-links a, .ac-settings a").forEach(link => {
+  document.querySelectorAll(".ac-links-item").forEach(link => {
     const linkPage = link.getAttribute("href");
 
     if (currentPage === linkPage) {
-      const targetDiv = link.querySelector(".ac-link, .ac-item");
-      if (targetDiv) {
-        targetDiv.classList.add("ac-link-active");
-      }
+        link.classList.add("active");
+      
     }
   });
 </script>
