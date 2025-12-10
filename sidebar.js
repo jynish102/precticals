@@ -125,3 +125,82 @@ document.addEventListener("keydown", (e) => {
     moreDropdown.classList.remove("show");
   }
 });
+
+function openPopup() {
+    document.getElementById("addPostPopup").style.display = "flex";
+}
+
+function closePopup() {
+    // Instead of closing directly → show discard confirmation
+    document.getElementById("discardPopup").style.display = "flex";
+}
+
+function closeDiscard() {
+    document.getElementById("discardPopup").style.display = "none";
+}
+
+function discardPost() {
+    document.getElementById("discardPopup").style.display = "none";
+    document.getElementById("addPostPopup").style.display = "none";
+
+    // Reset preview
+    const img = document.getElementById("previewImg");
+    img.style.display = "none";
+    img.src = "";
+
+    // SHOW upload area again
+    document.querySelector(".upload-area").style.display = "flex";
+
+    // Clear caption
+    document.querySelector(".caption-box").value = "";
+}
+
+
+    // Optional: Clear preview & caption
+    document.getElementById("previewImg").style.display = "none";
+    document.getElementById("previewImg").src = "";
+    document.querySelector(".caption-box").value = "";
+
+
+function previewImage(event) {
+    const img = document.getElementById("previewImg");
+    img.src = URL.createObjectURL(event.target.files[0]);
+    img.style.display = "block";
+
+    // HIDE upload area
+    document.querySelector(".upload-area").style.display = "none";
+}
+
+
+function previewMedia(event) {
+    const file = event.target.files[0];
+
+    const imagePreview = document.getElementById("previewImg");
+    const videoPreview = document.getElementById("previewVideo");
+
+    // Reset both
+    imagePreview.style.display = "none";
+    videoPreview.style.display = "none";
+
+    // Hide upload area
+    document.querySelector(".upload-area").style.display = "none";
+
+    // Check file type
+    if (file.type.startsWith("image/")) {
+        imagePreview.src = URL.createObjectURL(file);
+        imagePreview.style.display = "block";
+    } 
+    else if (file.type.startsWith("video/")) {
+        videoPreview.src = URL.createObjectURL(file);
+        videoPreview.style.display = "block";
+    }
+}
+
+
+
+document.getElementById("previewImg").src = "";
+document.getElementById("previewVideo").src = "";
+document.getElementById("previewVideo").style.display = "none";
+
+
+document.querySelector(".upload-area").style.display = "flex";
