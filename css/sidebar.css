@@ -26,6 +26,7 @@ body.dark {
 
 .sidebar.close {
     width: 78px;
+    overflow: visible;
 }
 
 .sidebar header {
@@ -132,6 +133,16 @@ body.dark {
     background: #3a3b3c;
 }
 
+/* When sidebar is closed, keep icons but hide labels */
+.sidebar.close .nav-text {
+  display: none;
+}
+
+.sidebar.close .nav-link {
+  justify-content: center;   /* center the icon */
+}
+
+/* Ensure dropdown menu appears on top of content */
 
 .bottom-content li {
     list-style: none;
@@ -304,34 +315,7 @@ body:not(.dark) .dropdown-toggle{
     font-size: 15px;
 }
 
-.welcome-buttons {
-    margin-top: 20px;
-    display: flex;
-    gap: 15px;
-}
 
-.btn-primary {
-    background: #695CFE;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 6px;
-    border: none;
-    cursor: pointer;
-}
-
-.btn-secondary {
-    background: transparent;
-    border: 2px solid #695CFE;
-    color: #695CFE;
-    padding: 10px 20px;
-    border-radius: 6px;
-    cursor: pointer;
-}
-
-.btn-primary:hover,
-.btn-secondary:hover {
-    opacity: 0.8;
-}
 
 .feed {
     max-width: 520px;
@@ -618,7 +602,7 @@ body:not(.dark) .hover-menu{
 
 .hover-menu {
     position: absolute;
-    bottom: 110%;
+    bottom:  100%;
     
     left: 0;
     background:#18191a;
@@ -634,6 +618,16 @@ body:not(.dark) .hover-menu{
     display: flex;
     flex-direction: column;
 }
+
+
+
+
+.hover-dropdown:hover .hover-menu {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
 
 
 .hover-dropdown:hover .hover-menu {
@@ -966,5 +960,92 @@ body:not(.dark) .hover-menu .danger {
     color: #777;
 }
 
+
+.story-logos-row {
+  display: flex;
+  gap: 12px;                 /* space between avatars */
+  overflow-x: auto;          /* allow horizontal scroll */
+  overflow-y: hidden;
+  padding: 8px 0;
+  scroll-snap-type: x mandatory;     /* optional: snap effect */
+}
+
+/* each story item */
+.logo-wrapper {
+  flex: 0 0 auto;
+  scroll-snap-align: start;          /* optional */
+}
+
+/* hide scrollbar, keep scrolling */
+.scrollbar-hide {
+  -ms-overflow-style: none;      /* IE, Edge */
+  scrollbar-width: none;         /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;                 /* Chrome, Safari, Opera */
+}
+
+
+
+
+
+
+
+.suggest-section {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.suggest-header {
+  font-weight: 600;
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+
+/* wrapper just holds the row */
+.story-suggest-wrapper {
+  margin-bottom: 16px;
+}
+
+/* horizontal scroll row */
+.story-logos-row {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 8px 0;
+  scroll-snap-type: x mandatory;   /* optional nice snapping */
+}
+
+/* each user */
+.logo-wrapper {
+  flex: 0 0 auto;
+  text-align: center;
+  scroll-snap-align: start;
+}
+
+.logo-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ff3b5c; /* story ring style */
+}
+
+.logo-name {
+  margin-top: 4px;
+  font-size: 12px;
+}
+
+/* hide scrollbar, keep scroll (mobile‑friendly) */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;             /* Chrome, Safari, Opera */
+}
         
 
