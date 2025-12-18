@@ -480,3 +480,55 @@ body {
     border-bottom: 2px solid black;
     font-weight: bold;
 }
+
+
+
+
+
+/* Whole profile column */
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 56px); /* adjust if you have a top navbar height */
+  overflow: hidden;           /* prevent page-level scroll inside this box */
+  padding: 16px;
+}
+
+/* Top area (image, name, counts, edit button, tabs) stays fixed */
+.user-row,
+.edit-btn-container,
+.tabs {
+  flex-shrink: 0;
+}
+
+/* Let tab contents be the scroll area */
+.tab-content {
+  flex: 1;
+  overflow-y: auto;
+  padding-top: 12px;
+}
+
+/* Posts grid like Instagram */
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 1fr;
+  gap: 4px;
+  margin-top: 16px;
+}
+
+.post-item {
+  position: relative;
+  width: 100%;
+  padding-top: 100%;      /* 1:1 ratio square */
+  overflow: hidden;
+}
+
+.post-item img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

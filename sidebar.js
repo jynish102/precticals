@@ -204,3 +204,13 @@ document.getElementById("previewVideo").style.display = "none";
 
 
 document.querySelector(".upload-area").style.display = "flex";
+
+
+document.querySelector(".dropdown-toggle").addEventListener("click", (e) => {
+  e.stopPropagation();
+  document.querySelector(".hover-menu").classList.toggle("show");
+});
+
+document.addEventListener("click", () => {
+  document.querySelector(".hover-menu").classList.remove("show");
+});
