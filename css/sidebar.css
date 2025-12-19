@@ -714,7 +714,7 @@ body:not(.dark) .hover-menu .danger {
     display: flex;
     align-items: center;
     justify-content: center;
-    background:#f9fafc;;
+    background:#f9fafc;
     color:#18191a;;
     font-size: 22px;
     gap:12px;
