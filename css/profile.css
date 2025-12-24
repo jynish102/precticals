@@ -483,31 +483,6 @@ body {
 
 
 
-
-
-/* Whole profile column */
-.profile-container {
-  display: flex;
-  flex-direction: column;
-  height: calc(100vh - 56px); /* adjust if you have a top navbar height */
-  overflow: hidden;           /* prevent page-level scroll inside this box */
-  padding: 16px;
-}
-
-/* Top area (image, name, counts, edit button, tabs) stays fixed */
-.user-row,
-.edit-btn-container,
-.tabs {
-  flex-shrink: 0;
-}
-
-/* Let tab contents be the scroll area */
-.tab-content {
-  flex: 1;
-  overflow-y: auto;
-  padding-top: 12px;
-}
-
 /* Posts grid like Instagram */
 .posts-grid {
   display: grid;
@@ -532,3 +507,234 @@ body {
   height: 100%;
   object-fit: cover;
 }
+
+
+
+
+.view-post-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.view-post-box {
+  width: 900px;
+  height: 550px;
+  background: white;
+  display: flex;
+}
+
+.view-post-left {
+  width: 55%;
+  background: black;
+}
+
+.view-post-left img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.view-post-right {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+}
+
+.view-post-header {
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+}
+
+.view-comments {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+.view-actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.view-add-comment {
+  border-top: 1px solid #ddd;
+  display: flex;
+}
+
+.view-add-comment input {
+  flex: 1;
+  border: none;
+  padding: 10px;
+}
+
+/*---------bio-------------------*/
+.bio {
+  margin-top: 10px;
+}
+
+.bio-text {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.4;
+}
+
+/*------------------------------------ppop cmt----------------------*/
+.post-view-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.post-view-box {
+  background: #fff;
+  width: 900px;
+  height: 550px;
+  display: flex;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.post-view-image {
+  flex: 1;
+  background: #000;
+}
+
+.post-view-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.post-view-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}
+
+.post-view-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+}
+
+.pv-user {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pv-user-img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #ddd;
+}
+.post-caption {
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+.post-comments {
+  flex: 1;
+  overflow-y: auto;
+  font-size: 14px;
+}
+
+.comment {
+  margin-bottom: 8px;
+}
+
+.post-actions {
+  display: flex;
+  gap: 15px;
+  font-size: 22px;
+  margin: 10px 0;
+}
+
+.add-comment {
+  display: flex;
+  gap: 10px;
+}
+
+.add-comment input {
+  flex: 1;
+  border: none;
+  outline: none;
+  
+}
+
+.add-comment button {
+  border: none;
+  background: none;
+  color: #0095f6;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close-post-view {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+
+.post-options-popup {
+  position: absolute;
+  top: 60px;
+  right: 15px;
+  width: 180px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 2000;
+}
+
+.post-option {
+  padding: 12px;
+  text-align: center;
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+  border-bottom: 1px solid #eee;
+}
+
+.post-option:last-child {
+  border-bottom: none;
+}
+
+.post-option:hover {
+  background: #f7f7f7;
+}
+
+/* 🔴 DELETE (ACTIVE / DANGER) */
+.post-option.danger {
+  color: #ed4956;
+  font-weight: 600;
+}
+
+/* Cancel style */
+.post-option.cancel {
+  font-weight: 500;
+}
+
