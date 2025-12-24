@@ -1,5 +1,6 @@
-<!DOCTYPE html>
+
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Profile</title>
@@ -20,8 +21,8 @@
       <div class="profile-pic-wrapper">
         <i class="bx bxs-user default-user-icon"></i>
         <label class="camera-icon">
-        <i class="bx bx-camera camera-icon"></i>
-        <input type="file" hidden>
+          <i class="bx bx-camera camera-icon"></i>
+          <input type="file" hidden>
         </label>
       </div>
 
@@ -52,6 +53,15 @@
           </div>
         </div>
 
+        <!-- ✅ BIO SECTION -->
+        <div class="bio">
+          <p class="bio-text">
+            ✨ This is my bio. Passionate about coding & design.<br>
+            📍 Earth
+          </p>
+        </div>
+
+
       </div>
     </div>
 
@@ -62,166 +72,249 @@
       </a>
     </div>
 
-   <!-- ✅ TABS -->
-<div class="tabs">
-  <div class="tab active" data-tab="posts">
-    <i class="bx bx-grid-alt"></i>
-    <span>Posts</span>
-  </div>
+    <!-- ✅ TABS -->
+    <div class="tabs">
+      <div class="tab active" data-tab="posts">
+        <i class="bx bx-grid-alt"></i>
+        <span>Posts</span>
+      </div>
 
-  <div class="tab" data-tab="reels">
-    <i class="bx bx-play-circle"></i>
-    <span>Reels</span>
-  </div>
+      <div class="tab" data-tab="reels">
+        <i class="bx bx-play-circle"></i>
+        <span>Reels</span>
+      </div>
 
-  <div class="tab" data-tab="saved">
-    <i class="bx bx-bookmark"></i>
-    <span>Saved</span>
-  </div>
-</div>
+      <div class="tab" data-tab="saved">
+        <i class="bx bx-bookmark"></i>
+        <span>Saved</span>
+      </div>
 
 
-<!-- ✅ POSTS TAB CONTENT (IMPORTANT FIX ✅) -->
-<div class="tab-content active" id="posts">
+    </div>
 
-  <div class="getting-started">
-    <h3 class="gs-title">Getting Started</h3>
 
-    <div class="gs-cards">
-      <div class="gs-card">
-        <div class="gs-icon">
-          <i class="bx bx-camera"></i>
+    <!-- ✅ POSTS TAB CONTENT (IMPORTANT FIX ✅) -->
+    <div class="tab-content active" id="posts">
+
+      <div class="getting-started">
+        <h3 class="gs-title">Getting Started</h3>
+
+        <div class="gs-cards">
+          <div class="gs-card">
+            <div class="gs-icon">
+              <i class="bx bx-camera"></i>
+            </div>
+
+            <h4>Share Photos</h4>
+            <p>When you share photos, they'll appear on your profile.</p>
+
+            <button class="gs-btn" id="openCreatePost">
+              Share your first photo
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+    <!-- ✅ REELS TAB CONTENT -->
+    <div class="tab-content" id="reels">
+      <h3 class="gs-title">Reels</h3>
+      <p>This is your Reels section.</p>
+    </div>
+
+
+    <!-- ✅ SAVED TAB CONTENT -->
+    <div class="tab-content" id="saved">
+      <h3 class="gs-title">Saved</h3>
+      <p>This is your Saved posts section.</p>
+    </div>
+
+
+
+
+    <div class="posts-grid">
+      <div class="post-item">
+        <img src="https://picsum.photos/600/600?random=1" alt="Post 1">
+      </div>
+      <div class="post-item">
+        <img src="https://picsum.photos/600/600?random=2" alt="Post 2">
+      </div>
+      <div class="post-item">
+        <img src="https://picsum.photos/600/600?random=3" alt="Post 3">
+      </div>
+      <div class="post-item">
+        <img src="https://picsum.photos/600/600?random=4" alt="Post 4">
+      </div>
+      <div class="post-item">
+        <img src="https://picsum.photos/600/600?random=5" alt="Post 5">
+      </div>
+
+
+    </div>
+
+
+
+
+
+
+
+
+    <!--popuo------------------------------------------>
+    <!-- ✅ CREATE POST MODAL -->
+    <div class="create-post-overlay" id="createPostModal">
+
+      <div class="create-post-box">
+
+        <!-- HEADER -->
+        <div class="create-post-header">
+          <span>Create new post</span>
+          <i class="bx bx-x" id="closePostModal"></i>
         </div>
 
-        <h4>Share Photos</h4>
-        <p>When you share photos, they'll appear on your profile.</p>
+        <!-- BODY -->
+        <div class="create-post-body">
+          <i class="bx bx-images post-big-icon"></i>
+          <p>Drag photos and videos here</p>
 
-        <button class="gs-btn" id="openCreatePost">
-          Share your first photo
-        </button>
+          <button class="select-btn" id="selectFromComputer">
+            Select from computer
+          </button>
+
+          <input type="file" id="postFileInput" hidden accept="image/*,video/*">
+        </div>
+
       </div>
     </div>
-  </div>
+
+
+    <!-------------------------------------------------------------secomd popup-->
+
+    <!-- ✅ CROP MODAL -->
+    <div class="crop-overlay" id="cropModal">
+
+      <div class="crop-box">
+        <i class="bx bx-x close-crop" id="closeCrop"></i>
+
+        <!-- ✅ HEADER -->
+        <div class="crop-header">
+          <i class="bx bx-arrow-back crop-back" id="backToUpload"></i>
+
+          <button class="next-btn">Next</button>
+
+        </div>
+
+        <!-- ✅ IMAGE PREVIEW -->
+        <div class="crop-preview">
+          <img id="cropImage" src="">
+        </div>
+
+
+
+      </div>
+    </div>
+
+    <!--3rd popup------------------------------------------------------->
+    <!-- ✅ DISCARD CONFIRM MODAL -->
+    <div class="discard-overlay" id="discardModal">
+
+      <div class="discard-box">
+        <h3>Discard post?</h3>
+        <p>If you leave, your edits won't be saved.</p>
+
+        <div class="discard-actions">
+          <button class="discard-btn" id="confirmDiscard">Discard</button>
+          <button class="cancel-btn" id="cancelDiscard">Cancel</button>
+        </div>
+      </div>
+
+    </div>
+
+
+
+    <!-- ✅ VIEW / EDIT POST MODAL -->
+    <div class="post-view-overlay" id="postViewModal">
+
+      <div class="post-view-box">
+
+        <!-- LEFT: IMAGE + COMMENT BUTTON -->
+        <div class="post-view-image">
+
+          <img id="viewPostImage" src="">
+
+          <!-- ✅ ADD COMMENT BUTTON (LEFT SIDE) -->
+          <button class="img-comment-btn">
+            <i class="bx bx-message-rounded"></i>
+            Comment
+          </button>
+
+        </div>
+
+        <!-- RIGHT: DETAILS -->
+        <div class="post-view-details">
+
+          <!-- HEADER -->
+          <div class="post-view-header">
+            <div class="pv-user">
+              <img src="https://picsum.photos/40/40" alt="Profile" class="pv-user-img">
+              <span>username_here</span>
+            </div>
+            <i class="bx bx-dots-horizontal-rounded" id="openPostOptions"></i>
+          </div>
+
+          <!-- CAPTION -->
+          <div class="post-caption">
+            <b>username_here</b>
+            <span>This is a sample caption for the post.</span>
+          </div>
+
+          <!-- COMMENTS -->
+          <div class="post-comments">
+            <div class="comment"><b>user1</b> Nice post!</div>
+            <div class="comment"><b>user2</b> 🔥🔥</div>
+          </div>
+
+          <!-- ACTIONS -->
+          <div class="post-actions">
+            <i class="bx bx-heart"></i>
+            <i class="bx bx-message-rounded"></i>
+            <i class="bx bx-bookmark"></i>
+          </div>
+
+          <!-- ✅ COMMENT FORM -->
+          <form class="add-comment" method="POST">
+            <input type="text" name="comment" placeholder="Add a comment..." required>
+            <button type="submit">Post</button>
+          </form>
+
+        </div>
+
+
+
+      </div>
+
+    </div>
+
+
+    <!-- ✅ POST OPTIONS POPUP -->
+<div class="post-options-popup" id="postOptionsPopup">
+
+  <a href="#" class="post-option danger">
+    Delete
+  </a>
+
+  <a href="#" class="post-option">
+    Edit
+  </a>
+
+  <a href="#" class="post-option cancel">
+    Cancel
+  </a>
 
 </div>
 
 
-<!-- ✅ REELS TAB CONTENT -->
-<div class="tab-content" id="reels">
-  <h3 class="gs-title">Reels</h3>
-  <p>This is your Reels section.</p>
-</div>
-
-
-<!-- ✅ SAVED TAB CONTENT -->
-<div class="tab-content" id="saved">
-  <h3 class="gs-title">Saved</h3>
-  <p>This is your Saved posts section.</p>
-</div>
-
-
-<div class="posts-grid">
-    <div class="post-item">
-      <img src="https://picsum.photos/600/600?random=1" alt="Post 1">
-    </div>
-    <div class="post-item">
-      <img src="https://picsum.photos/600/600?random=2" alt="Post 2">
-    </div>
-    <div class="post-item">
-      <img src="https://picsum.photos/600/600?random=3" alt="Post 3">
-    </div>
-    <div class="post-item">
-      <img src="https://picsum.photos/600/600?random=4" alt="Post 4">
-    </div>
-    <div class="post-item">
-      <img src="https://picsum.photos/600/600?random=5" alt="Post 5">
-    </div>
-    <div class="post-item">
-      <img src="https://picsum.photos/600/600?random=6" alt="Post 6">
-    </div>
-    <div class="post-item">
-      <img src="https://picsum.photos/600/600?random=7" alt="Post 7">
-    </div>
-    <div class="post-item">
-      <img src="https://picsum.photos/600/600?random=8" alt="Post 8">
-    </div>
-    <div class="post-item">
-      <img src="https://picsum.photos/600/600?random=9" alt="Post 9">
-    </div>
-  </div>
-  
-
-
-
-<!--popuo------------------------------------------>
-<!-- ✅ CREATE POST MODAL -->
-<div class="create-post-overlay" id="createPostModal">
-
-  <div class="create-post-box">
-
-    <!-- HEADER -->
-    <div class="create-post-header">
-      <span>Create new post</span>
-      <i class="bx bx-x" id="closePostModal"></i>
-    </div>
-
-    <!-- BODY -->
-    <div class="create-post-body">
-      <i class="bx bx-images post-big-icon"></i>
-      <p>Drag photos and videos here</p>
-
-      <button class="select-btn" id="selectFromComputer">
-        Select from computer
-      </button>
-
-      <input type="file" id="postFileInput" hidden accept="image/*,video/*">
-    </div>
-
-  </div>
-</div>
-
-
-<!-------------------------------------------------------------secomd popup-->
-
-<!-- ✅ CROP MODAL -->
-<div class="crop-overlay" id="cropModal">
-
-  <div class="crop-box">
-    <i class="bx bx-x close-crop" id="closeCrop"></i>
-
-    <!-- ✅ HEADER -->
-    <div class="crop-header">
-      <i class="bx bx-arrow-back crop-back" id="backToUpload"></i>
-      
-      <button class="next-btn">Next</button>
-      
-    </div>
-
-    <!-- ✅ IMAGE PREVIEW -->
-    <div class="crop-preview">
-      <img id="cropImage" src="">
-    </div>
-
-    
-
-  </div>
-</div>
-
-<!--3rd popup------------------------------------------------------->
-<!-- ✅ DISCARD CONFIRM MODAL -->
-<div class="discard-overlay" id="discardModal">
-
-  <div class="discard-box">
-    <h3>Discard post?</h3>
-    <p>If you leave, your edits won't be saved.</p>
-
-    <div class="discard-actions">
-      <button class="discard-btn" id="confirmDiscard">Discard</button>
-      <button class="cancel-btn" id="cancelDiscard">Cancel</button>
-    </div>
-  </div>
-
-</div>
 
 
 
@@ -229,7 +322,7 @@
 </body>
 
 <script>
-  
+
   const hasPosts = false; // change to true when backend sends posts
 
   if (hasPosts) {
@@ -237,117 +330,148 @@
   }
 
   document.querySelector(".gs-btn").onclick = () => {
-  alert("Open upload modal here");
-};
+    alert("Open upload modal here");
+  };
 
 
 
-/*------------first popup-------------------------------------- */
+  /*------------first popup-------------------------------------- */
 
-const openBtn = document.getElementById("openCreatePost");
-const modal = document.getElementById("createPostModal");
-const closeBtn = document.getElementById("closePostModal");
-const selectBtn = document.getElementById("selectFromComputer");
-const fileInput = document.getElementById("postFileInput");
+  const openBtn = document.getElementById("openCreatePost");
+  const modal = document.getElementById("createPostModal");
+  const closeBtn = document.getElementById("closePostModal");
+  const selectBtn = document.getElementById("selectFromComputer");
+  const fileInput = document.getElementById("postFileInput");
 
-const cropModal = document.getElementById("cropModal");
-const cropImage = document.getElementById("cropImage");
-const backBtn = document.getElementById("backToUpload");
-const closeCrop = document.getElementById("closeCrop");
+  const cropModal = document.getElementById("cropModal");
+  const cropImage = document.getElementById("cropImage");
+  const backBtn = document.getElementById("backToUpload");
+  const closeCrop = document.getElementById("closeCrop");
 
-const discardModal = document.getElementById("discardModal");
-const confirmDiscard = document.getElementById("confirmDiscard");
-const cancelDiscard = document.getElementById("cancelDiscard");
+  const discardModal = document.getElementById("discardModal");
+  const confirmDiscard = document.getElementById("confirmDiscard");
+  const cancelDiscard = document.getElementById("cancelDiscard");
 
-/* ✅ OPEN FIRST POPUP */
-openBtn.onclick = () => {
-  modal.style.display = "flex";
-};
+  /* ✅ OPEN FIRST POPUP */
+  openBtn.onclick = () => {
+    modal.style.display = "flex";
+  };
 
-/* ✅ CLOSE FIRST POPUP */
-closeBtn.onclick = () => {
-  modal.style.display = "none";
-};
+  /* ✅ CLOSE FIRST POPUP */
+  closeBtn.onclick = () => {
+    modal.style.display = "none";
+  };
 
-/* ✅ OPEN FILE PICKER */
-selectBtn.onclick = () => {
-  fileInput.click();
-};
+  /* ✅ OPEN FILE PICKER */
+  selectBtn.onclick = () => {
+    fileInput.click();
+  };
 
-/* ✅ AFTER FILE SELECT → OPEN CROP POPUP */
-fileInput.onchange = () => {
-  const file = fileInput.files[0];
+  /* ✅ AFTER FILE SELECT → OPEN CROP POPUP */
+  fileInput.onchange = () => {
+    const file = fileInput.files[0];
 
-  if (file) {
-    const reader = new FileReader();
-    reader.onload = () => {
-      cropImage.src = reader.result;
-      modal.style.display = "none";
-      cropModal.style.display = "flex";
-    };
-    reader.readAsDataURL(file);
-  }
-};
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        cropImage.src = reader.result;
+        modal.style.display = "none";
+        cropModal.style.display = "flex";
+      };
+      reader.readAsDataURL(file);
+    }
+  };
 
-/* ✅ BACK BUTTON FROM CROP */
-backBtn.onclick = () => {
-  cropModal.style.display = "none";
-  modal.style.display = "flex";
-};
+  /* ✅ BACK BUTTON FROM CROP */
+  backBtn.onclick = () => {
+    cropModal.style.display = "none";
+    modal.style.display = "flex";
+  };
 
-/* ✅ X BUTTON → OPEN DISCARD POPUP */
-closeCrop.onclick = () => {
-  discardModal.style.display = "flex";
-};
+  /* ✅ X BUTTON → OPEN DISCARD POPUP */
+  closeCrop.onclick = () => {
+    discardModal.style.display = "flex";
+  };
 
-/* ✅ CANCEL DISCARD */
-cancelDiscard.onclick = () => {
-  discardModal.style.display = "none";
-};
+  /* ✅ CANCEL DISCARD */
+  cancelDiscard.onclick = () => {
+    discardModal.style.display = "none";
+  };
 
-/* ✅ CONFIRM DISCARD */
-confirmDiscard.onclick = () => {
-  discardModal.style.display = "none";
-  cropModal.style.display = "none";
-  modal.style.display = "none";
-  fileInput.value = ""; // clear file input
-};
+  /* ✅ CONFIRM DISCARD */
+  confirmDiscard.onclick = () => {
+    discardModal.style.display = "none";
+    cropModal.style.display = "none";
+    modal.style.display = "none";
+    fileInput.value = ""; // clear file input
+  };
 
 
-/*--------------------------------------------------------*/
+  /*--------------------------------------------------------*/
 
   const tabs = document.querySelectorAll(".tab");
-const contents = document.querySelectorAll(".tab-content");
+  const contents = document.querySelectorAll(".tab-content");
 
-tabs.forEach(tab => {
-  tab.addEventListener("click", () => {
+  tabs.forEach(tab => {
+    tab.addEventListener("click", () => {
 
-    // ✅ Remove active from all tabs
-    tabs.forEach(t => t.classList.remove("active"));
+      // ✅ Remove active from all tabs
+      tabs.forEach(t => t.classList.remove("active"));
 
-    // ✅ Hide all tab contents (INCLUDING POSTS)
-    contents.forEach(c => c.classList.remove("active"));
+      // ✅ Hide all tab contents (INCLUDING POSTS)
+      contents.forEach(c => c.classList.remove("active"));
 
-    // ✅ Activate clicked tab
-    tab.classList.add("active");
+      // ✅ Activate clicked tab
+      tab.classList.add("active");
 
-    const target = tab.getAttribute("data-tab");
-    const activeContent = document.getElementById(target);
+      const target = tab.getAttribute("data-tab");
+      const activeContent = document.getElementById(target);
 
-    if (activeContent) {
-      activeContent.classList.add("active");
-    }
+      if (activeContent) {
+        activeContent.classList.add("active");
+      }
 
+    });
   });
-});
+
+
+  /* cmt popip*/
+
+  const postModal = document.getElementById("postViewModal");
+  const viewImage = document.getElementById("viewPostImage");
+  const closePostView = document.getElementById("closePostView");
+
+  document.querySelectorAll(".post-item img").forEach(img => {
+    img.addEventListener("click", () => {
+      viewImage.src = img.src;
+      postModal.style.display = "flex";
+    });
+  });
+
+  closePostView.onclick = () => {
+    postModal.style.display = "none";
+  };
 
 
 
+
+
+/*-------------posts edits-------------------*/
+
+
+
+  const openOptions = document.getElementById("openPostOptions");
+  const optionsPopup = document.getElementById("postOptionsPopup");
+
+  openOptions.onclick = (e) => {
+    e.stopPropagation();
+    optionsPopup.style.display =
+      optionsPopup.style.display === "flex" ? "none" : "flex";
+  };
+
+  // Close when clicking outside
+  document.addEventListener("click", () => {
+    optionsPopup.style.display = "none";
+  });
 </script>
-
-
-
-
-
-
 </html>
