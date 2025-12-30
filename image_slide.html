@@ -1,0 +1,90 @@
+<link rel="stylesheet" href="css/img_slider.css" />
+<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+<title>Image Slider</title>
+
+<body>
+    <div class="container">
+        <div class="slide">
+            <div class="item" style="background-image : url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-Oo-dRZ9KV9equUYI89jv_kU6lL7Gy3nGwg&s');">
+                <div class="content">
+                    <div class="name">Australia</div>
+                    <div class="about">Australia</div>
+                    <button>Explore More</button>
+                </div>
+            </div>
+
+            <div class="item" style="background-image : url('https://static.toiimg.com/photo/56759746/.jpg');">
+                <div class="content">
+                    <div class="name">India</div>
+                    <div class="about">Australia</div>
+                    <button>Explore More</button>
+                </div>
+            </div>
+
+            <div class="item" style="background-image : url('https://orionmagazine.org/wp-content/uploads/2015/09/8589130570139-dusk-camel-pyramids-cairo-egypt-top-travel-lists-wallpaper-hd.jpg');">
+                <div class="content">
+                    <div class="name">Egypt</div>
+                    <div class="about">Australia</div>
+                    <button>Explore More</button>
+                </div>
+            </div>
+
+            <div class="item" style="background-image : url('https://africantravelcanvas.com/wp-content/uploads/2020/06/Safari-game-in-the-Kalahari-Desert-African-Travel-Canvas.jpg');">
+                <div class="content">
+                    <div class="name">Kalahari</div>
+                    <div class="about">Australia</div>
+                    <button>Explore More</button>
+                </div>
+            </div>
+
+            <div class="item" style="background-image : url('https://mediaim.expedia.com/destination/9/cd8a3f3db7149b0ce36d052aea1182df.jpg');">
+                <div class="content">
+                    <div class="name">Dubai</div>
+                    <div class="about">Australia</div>
+                    <button>Explore More</button>
+                </div>
+            </div>
+
+            <div class="item" style="background-image : url('https://upload.wikimedia.org/wikipedia/commons/0/0e/African_buffalo_kenya.jpg');">
+                <div class="content">
+                    <div class="name">Kenya</div>
+                    <div class="about">Australia</div>
+                    <button>Explore More</button>
+                </div>
+            </div>
+
+            <div class="item" style="background-image : url('https://res.klook.com/image/upload/w_750,h_469,c_fill,q_85/w_80,x_15,y_15,g_south_west,l_Klook_water_br_trans_yhcmh3/activities/bxbkebixaovtrg3hxx6a.jpg');">
+                <div class="content">
+                    <div class="name">Auckland</div>
+                    <div class="about">Australia</div>
+                    <button>Explore More</button>
+                </div>
+            </div>
+
+        </div>
+        <div class="btns">
+            <button class="prev"><i class='bx bx-left-arrow-circle'></i> </button>
+            <button class="next"><i class='bx bx-right-arrow-circle'></i>  </button>
+        </div>
+    </div>
+
+    <i class='bx bx-user'></i>
+    <i class='bx  bx-arrow-left-stroke-circle bx-flip-vertical' style='color:#080707'></i> 
+</body>
+<script>
+    let prev =document.querySelector('.prev');
+    let next = document.querySelector('.next');
+
+    next.addEventListener('click', function() {
+        let items = document.querySelectorAll('.item');
+        document.querySelector('.slide').appendChild(items[0]);
+
+    });
+
+    prev.addEventListener('click', function() {
+        let items = document.querySelectorAll('.item');
+        document.querySelector('.slide').prepend(items[items.length - 1]);
+
+    });
+</script>
